@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
 interface ModalProps {
@@ -10,9 +10,7 @@ const Modal = ({ isOpen, children }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <>
-      <div>{children}</div>
-    </>,
+    <>{children}</>,
     document.getElementById("modal") as Element
   );
 };

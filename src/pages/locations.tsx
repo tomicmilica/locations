@@ -17,6 +17,10 @@ const Locations = () => {
     (state: GlobalState) => state.locations.locations
   );
 
+  useEffect(() => {
+    dispatch({ type: GET_LOCATIONS_REQUESTED });
+  }, [dispatch]);
+
   const handleLocationClik = (id: string) => {
     setIsOpen(true);
     setSelectedLocationId(id);
