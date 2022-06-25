@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import LocationCard from "../components/location-card/locationCard";
+import ModalContent from "../components/modal-content/modalContent";
+import Modal from "../components/modal/modal";
 import { GlobalState } from "../redux/reducers";
 import { GET_LOCATIONS_REQUESTED } from "../redux/types/types";
 import Location from "../types/location";
@@ -9,24 +11,37 @@ import { LocationHeader } from "./styled/locationsHeader.styled";
 
 const Locations = () => {
   const dispatch = useDispatch();
+  const [selectedLocationId, setSelectedLocationId] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const locations = useSelector(
     (state: GlobalState) => state.locations.locations
   );
 
-  const handleLocationClik = (id: string) => {};
-  useEffect(() => {
-    dispatch({ type: GET_LOCATIONS_REQUESTED });
-  });
+  const handleLocationClik = (id: string) => {
+    setIsOpen(true);
+    setSelectedLocationId(id);
+  };
+
+  const getSelectedLocation = (id: string) => {
+    return locations?.find((location) => location.id === id);
+  };
 
   return (
     <>
+      <div>
+        <Modal isOpen={isOpen}>
+          <ModalContent
+            onClose={() => setIsOpen(false)}
+            location={getSelectedLocation(selectedLocationId) || null}
+          />
+        </Modal>
+      </div>
       <LocationHeader>
         <h1>All locations</h1>
         <h2>Acme locations</h2>
       </LocationHeader>
       <LocationsContainer>
         {locations?.map((location) => {
-          console.log(location, "111111111");
           return (
             <LocationCard
               location={location}

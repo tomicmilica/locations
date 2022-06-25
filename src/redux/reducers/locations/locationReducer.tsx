@@ -22,7 +22,6 @@ const defaultState: LocationState = {
 const locationReducer = (state = defaultState, action: LocationAction) => {
   switch (action.type) {
     case GET_LOCATIONS_REQUESTED:
-      console.log("cao tu sam u reduceru");
       return {
         ...state,
         loading: true,

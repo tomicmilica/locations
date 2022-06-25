@@ -12,27 +12,6 @@ function* fetchLocations(action: any): Generator<StrictEffect, void, any> {
   try {
     const response = yield call(LocationApi.getLocations);
     const locations = response.data;
-    console.log("sad sam dosau u sagu");
-    // const locationsLocal = JSON.parse(
-    //   localStorage.getItem("locations") || "[]"
-    // );
-
-    // locations.forEach((loc: Location) => {
-    //   const location = locationsLocal.find(
-    //     (element: Location) => element.id === loc.id
-    //   );
-    //   if (location) {
-    //     loc.views = Number(location.views);
-    //   } else {
-    //     loc.views = 0;
-    //     locationsLocal.push({
-    //       id: loc.id,
-    //       views: 0,
-    //     });
-    //   }
-    // });
-
-    // localStorage.setItem("locations", JSON.stringify(locationsLocal));
 
     yield put({ type: GET_LOCATIONS_SUCCESS, payload: locations });
   } catch (e) {
