@@ -4,6 +4,8 @@ import LocationCard from "../components/location-card/locationCard";
 import { GlobalState } from "../redux/reducers";
 import { GET_LOCATIONS_REQUESTED } from "../redux/types/types";
 import Location from "../types/location";
+import { LocationsContainer } from "./styled/locationContainer.styled";
+import { LocationHeader } from "./styled/locationsHeader.styled";
 
 const Locations = () => {
   const dispatch = useDispatch();
@@ -18,15 +20,21 @@ const Locations = () => {
 
   return (
     <>
-      {locations?.map((location) => {
-        console.log(location, "111111111");
-        return (
-          <LocationCard
-            location={location}
-            onClick={() => handleLocationClik(location.id)}
-          />
-        );
-      })}
+      <LocationHeader>
+        <h1>All locations</h1>
+        <h2>Acme locations</h2>
+      </LocationHeader>
+      <LocationsContainer>
+        {locations?.map((location) => {
+          console.log(location, "111111111");
+          return (
+            <LocationCard
+              location={location}
+              onClick={() => handleLocationClik(location.id)}
+            />
+          );
+        })}
+      </LocationsContainer>
     </>
   );
 };
