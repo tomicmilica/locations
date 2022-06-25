@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import Location from "../Location";
+import Location from "../types/location";
 
 const baseUrl = "https://6033c4d8843b15001793194e.mockapi.io/api/locations";
 

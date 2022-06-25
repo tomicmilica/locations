@@ -10,6 +10,7 @@ const LocationCard = ({ location, onClick }: LocationCardProps) => {
     <div onClick={onClick}>
       <div>
         <h1>{location.name}</h1>
+        <h2>caocaocao</h2>
         <button>
           <img alt=""></img>
         </button>
