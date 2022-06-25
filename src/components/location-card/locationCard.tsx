@@ -1,4 +1,5 @@
 import Location from "../../types/location";
+import Edit from "../../assets/icons/Edit.svg";
 
 interface LocationCardProps {
   location: Location;
@@ -10,7 +11,10 @@ const LocationCard = ({ location, onClick }: LocationCardProps) => {
     <div onClick={onClick}>
       <div>
         <h1>{location.name}</h1>
-        <h2>caocaocao</h2>
+
+        <button>
+          <img src={Edit} alt=""></img>
+        </button>
         <button>
           <img alt=""></img>
         </button>
