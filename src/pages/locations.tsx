@@ -4,8 +4,10 @@ import LocationCard from "../components/location-card/locationCard";
 import ModalContent from "../components/modal-content/modalContent";
 import Modal from "../components/modal/modal";
 import { GlobalState } from "../redux/reducers";
-import { GET_LOCATIONS_REQUESTED } from "../redux/types/types";
-import Location from "../types/location";
+import {
+  GET_LOCATIONS_REQUESTED,
+  LOCATIONS_INCREASE_VIEWS,
+} from "../redux/types/types";
 import { LocationsContainer } from "./styled/locationContainer.styled";
 import { LocationHeader } from "./styled/locationsHeader.styled";
 
@@ -24,6 +26,7 @@ const Locations = () => {
   const handleLocationClik = (id: string) => {
     setIsOpen(true);
     setSelectedLocationId(id);
+    dispatch({ type: LOCATIONS_INCREASE_VIEWS, payload: id });
   };
 
   const getSelectedLocation = (id: string) => {
@@ -44,10 +47,12 @@ const Locations = () => {
         <h1>All locations</h1>
         <h2>Acme locations</h2>
       </LocationHeader>
+
       <LocationsContainer>
         {locations?.map((location) => {
           return (
             <LocationCard
+              key={location.id}
               location={location}
               onClick={() => handleLocationClik(location.id)}
             />

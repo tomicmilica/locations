@@ -9,4 +9,8 @@ export const DoneButton = styled.button`
   opacity: 100% !important;
   height: 32px;
   cursor: pointer;
+  margin-left: auto;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 `;

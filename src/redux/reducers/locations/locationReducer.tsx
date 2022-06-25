@@ -42,6 +42,14 @@ const locationReducer = (state = defaultState, action: LocationAction) => {
       return {
         ...state,
         loading: false,
+        locations: state.locations.map((location: Location) => {
+          if (location.id === action.payload) {
+            return {
+              ...location,
+              views: location.views ? location.views + 1 : 1,
+            };
+          } else return location;
+        }),
       };
     default:
       return state;

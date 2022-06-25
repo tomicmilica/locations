@@ -6,3 +6,8 @@ export default interface Location {
   description: string;
   views?: number;
 }
+
+export interface LocationLocal {
+  id: string;
+  views: number;
+}
