@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Content } from "./styled/modal.styled";
 
 interface ModalProps {
   isOpen: boolean;
@@ -10,7 +11,9 @@ const Modal = ({ isOpen, children }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <>{children}</>,
+    <>
+      <Content>{children}</Content>
+    </>,
     document.getElementById("modal") as Element
   );
 };

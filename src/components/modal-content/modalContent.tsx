@@ -7,6 +7,8 @@ import Close from "../../assets/icons/Close.svg";
 
 import moment from "moment";
 import { LocationCardHeader } from "../location-card/styled/locationCardHeader.styled";
+import { ModalContentContainer } from "./styled/modalContentContainter";
+import { DoneButton } from "./styled/doneButton.styled";
 
 interface ModalItemProps {
   location: Location | null;
@@ -16,7 +18,7 @@ interface ModalItemProps {
 const ModalContent = ({ location, onClose }: ModalItemProps) => {
   return (
     location && (
-      <div>
+      <ModalContentContainer>
         <LocationCardHeader>
           <h1>{location.name}</h1>
           <button onClick={onClose}>
@@ -36,8 +38,8 @@ const ModalContent = ({ location, onClose }: ModalItemProps) => {
         <LocationCardContent icon={Views} data={"views"} />
         <h2>Description</h2>
         <p>{location.description}</p>
-        <button onClick={onClose}>Done</button>
-      </div>
+        <DoneButton onClick={onClose}>Done</DoneButton>
+      </ModalContentContainer>
     )
   );
 };
