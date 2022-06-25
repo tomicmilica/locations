@@ -1,3 +1,5 @@
+import { LocationContentContainer } from "./styled/locationContentContainer.styled";
+
 interface LocationCardItemProps {
   icon?: string;
   data: string | number;
@@ -5,10 +7,10 @@ interface LocationCardItemProps {
 
 const LocationCardContent = ({ icon, data }: LocationCardItemProps) => {
   return (
-    <div>
+    <LocationContentContainer>
       <img src={icon} alt="" />
       <p>{data} views</p>
-    </div>
+    </LocationContentContainer>
   );
 };
 
