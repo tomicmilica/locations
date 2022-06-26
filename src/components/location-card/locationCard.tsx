@@ -15,11 +15,11 @@ interface LocationCardProps {
 
 const LocationCard = ({ location, onClick }: LocationCardProps) => {
   return (
-    <LocationCardContainer onClick={onClick}>
+    <LocationCardContainer onClick={onClick} data-testid="location-card">
       <LocationCardHeader>
         <h1>{location.name}</h1>
         <button>
-          <img src={Edit} alt=""></img>
+          <img src={Edit} alt="edit"></img>
         </button>
       </LocationCardHeader>
       <LocationCardContent

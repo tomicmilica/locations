@@ -18,7 +18,7 @@ interface ModalItemProps {
 const ModalContent = ({ location, onClose }: ModalItemProps) => {
   return (
     location && (
-      <ModalContentContainer>
+      <ModalContentContainer data-testid={"modal-content"}>
         <LocationCardHeader>
           <h1>{location.name}</h1>
           <button onClick={onClose}>
@@ -38,7 +38,9 @@ const ModalContent = ({ location, onClose }: ModalItemProps) => {
         <LocationCardContent icon={Views} data={"views"} />
         <h2>Description</h2>
         <p>{location.description}</p>
-        <DoneButton onClick={onClose}>Done</DoneButton>
+        <DoneButton onClick={onClose} data-testid="modal-x-button">
+          Done
+        </DoneButton>
       </ModalContentContainer>
     )
   );
