@@ -26,5 +26,7 @@ export const LocationCardContainer = styled.div`
 
   :hover ${LocationCardButton} {
     visibility: visible;
+    background-color: #fff;
+    border-radius: 50%;
   }
 `;
