@@ -7,8 +7,8 @@ interface LocationCardItemProps {
 
 const LocationCardContent = ({ icon, data }: LocationCardItemProps) => {
   return (
-    <LocationContentContainer>
-      <img src={icon} alt="" />
+    <LocationContentContainer data-testid="location-card-content">
+      <img src={icon} alt="icon" />
       <p>{data} views</p>
     </LocationContentContainer>
   );

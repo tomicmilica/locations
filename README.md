@@ -17,3 +17,6 @@ npm install
 
 Tests: 📑
 npm test
+
+To start App 📑:
+npm start
