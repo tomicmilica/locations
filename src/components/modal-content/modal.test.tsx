@@ -25,6 +25,15 @@ describe("Modal", () => {
     expect(screen.getByTestId("modal-content")).toBeInTheDocument();
   });
 
+  it("should render some props", async () => {
+    expect(
+      screen.getByText(modalProps.location.id, { exact: false })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(modalProps.location.description, { exact: false })
+    ).toBeInTheDocument();
+  });
+
   it("Then it should call onClose", () => {
     const button = screen.getByTestId("modal-x-button");
     fireEvent.click(button);
