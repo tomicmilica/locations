@@ -22,7 +22,7 @@ const ModalContent = ({ location, onClose }: ModalItemProps) => {
         <LocationCardHeader>
           <h1>{location.name}</h1>
           <button onClick={onClose}>
-            <img src={Close} alt=""></img>
+            <img src={Close} alt="x"></img>
           </button>
         </LocationCardHeader>
         <LocationCardContent

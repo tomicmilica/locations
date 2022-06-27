@@ -25,6 +25,7 @@ export const ModalContentContainer = styled.div`
     border: none;
     opacity: 30%;
     cursor: pointer;
+    background-color: #fff;
   }
 
   p {

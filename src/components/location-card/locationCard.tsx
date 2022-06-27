@@ -7,6 +7,7 @@ import Edit from "../../assets/icons/Edit.svg";
 import moment from "moment";
 import { LocationCardContainer } from "./styled/locationCardContainer";
 import { LocationCardHeader } from "./styled/locationCardHeader.styled";
+import { LocationCardButton } from "./styled/locationCardButton";
 
 interface LocationCardProps {
   location: Location;
@@ -18,9 +19,9 @@ const LocationCard = ({ location, onClick }: LocationCardProps) => {
     <LocationCardContainer onClick={onClick} data-testid="location-card">
       <LocationCardHeader>
         <h1>{location.name}</h1>
-        <button>
-          <img src={Edit} alt="edit"></img>
-        </button>
+        <LocationCardButton>
+          <img src={Edit} alt="edit" />
+        </LocationCardButton>
       </LocationCardHeader>
       <LocationCardContent
         icon={Users}

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { LocationCardButton } from "./locationCardButton";
 
 export const LocationCardContainer = styled.div`
   display: flex;
@@ -21,5 +22,9 @@ export const LocationCardContainer = styled.div`
     border: none;
     color: #ffffff;
     opacity: 80%;
+  }
+
+  :hover ${LocationCardButton} {
+    visibility: visible;
   }
 `;
