@@ -20,13 +20,16 @@ export const LocationCardContainer = styled.div`
 
   button {
     border: none;
-    color: #ffffff;
+    background-color: #fff;
+    border-radius: 50%;
     opacity: 80%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    height: max-content;
   }
 
   :hover ${LocationCardButton} {
     visibility: visible;
-    background-color: #fff;
-    border-radius: 50%;
   }
 `;
