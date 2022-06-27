@@ -35,7 +35,10 @@ const ModalContent = ({ location, onClose }: ModalItemProps) => {
             location.createdAt
           ).format("Z")})`}
         />
-        <LocationCardContent icon={Views} data={"views"} />
+        <LocationCardContent
+          icon={Views}
+          data={`${location.views?.toString()}`}
+        />
         <h2>Description</h2>
         <p>{location.description}</p>
         <DoneButton onClick={onClose} data-testid="modal-x-button">

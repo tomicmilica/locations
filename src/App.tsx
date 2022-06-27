@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Locations from "./pages/locations";
 import { locations } from "./routes/routes";
 import { Container } from "./styles/Container.styled";
@@ -10,7 +10,10 @@ function App() {
     <>
       <GlobalStyles />
       <Container>
-        <Locations />
+        <Routes>
+          <Route path={locations()} element={<Locations />} />
+          <Route path="*" element={<Navigate to={locations()} replace />} />
+        </Routes>
       </Container>
     </>
   );

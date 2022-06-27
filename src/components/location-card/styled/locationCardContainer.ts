@@ -17,4 +17,10 @@ export const LocationCardContainer = styled.div`
     margin-bottom: 10px;
     opacity: 80%;
   }
+
+  button {
+    border: none;
+    color: #ffffff;
+    opacity: 80%;
+  }
 `;

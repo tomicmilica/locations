@@ -4,8 +4,8 @@ export const ModalContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  width: 30%;
-  height: 30%;
+  width: 440px;
+  height: 350px;
   padding: 5px 30px;
   border: 1.5px solid rgba(0, 17, 34, 0.1);
   border-radius: 3px;
